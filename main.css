@@ -40,7 +40,7 @@ td {
 
 /*日曜日*/
 td:first-child {
-    color: red;
+    color: rgb(255, 0, 0);
 }
 
 /*土曜日*/
@@ -55,8 +55,8 @@ td.disabled {
 
 /*本日*/
 td.today {
-    background-color: #D65E72;
-    color: #fff;
+    background-color: #fc5252;
+    color: rgb(255, 255, 255);
 }
 
 /*ボタン*/
@@ -85,5 +85,9 @@ td.today {
 }
 
 #next {
+    float: right;
+}
+
+#cloud {
     float: right;
 }
