@@ -80,6 +80,10 @@ td.today {
     border-color: #52fcfa;
 }
 
+#gototoday {
+    float: right;
+}
+
 #prev {
     float: left;
 }

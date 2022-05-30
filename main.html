@@ -12,6 +12,10 @@
     window.onload = function () {
         showProcess(today, calendar);
     };
+
+    function gototoday() {
+        showProcess(today, calendar);
+    }
     // 前の月表示
     function prev() {
         showDate.setMonth(showDate.getMonth() - 1);
@@ -86,6 +90,7 @@
         <h1 id="header"></h1>
         <button id="sift" onclick="location.href='sift.html'" type="button">シフトページ</button>
         <button id="operatemoney" onclick="location.href='operatemoney.html'" type="button">入出金ページ</button>
+        <button id="gototoday" onclick="gototoday()">今月に戻る</button>
         <!-- ボタンクリックで月移動 -->
         <div id="next-prev-button">
             <button id="prev" onclick="prev()">‹</button>
@@ -106,7 +111,7 @@
             <button id="writesift" onclick="location='writesift.html'" type="button">シフト入力</button>
             　　　現在残金：
             <a id="leftmoney"></a><br>
-            <button id="registerwork" onclick="location='registerwork.html'" type="button">アルバイト入力</button>
+            <button id="registerwork" onclick="location='registerwork.html'" type="button">アルバイト登録</button>
             <button id="cloud" onclick="location='cloud.html'" type="button">クラウドへバックアップ</button>
         </p>
     </div>
