@@ -85,7 +85,7 @@
         <!-- xxxx年xx月を表示 -->
         <h1 id="header"></h1>
         <button id="sift" onclick="location.href='sift.html'" type="button">シフトページ</button>
-        <button id="sift" onclick="location.href='operatemoney.html'" type="button">入出金ページ</button>
+        <button id="operatemoney" onclick="location.href='operatemoney.html'" type="button">入出金ページ</button>
         <!-- ボタンクリックで月移動 -->
         <div id="next-prev-button">
             <button id="prev" onclick="prev()">‹</button>
@@ -101,6 +101,12 @@
                 <option value="in">入金</option>
             </select>
             　　　<button id="confirm" onclick="moneymove()">確定</button>
+        </p>
+        <p>
+            <button id="writesift" onclick="location='writesift.html'" type="button">シフト入力</button>
+            　　　現在残金：
+            <a id="leftmoney"></a><br>
+            <button id="registerwork" onclick="location='registerwork.html'" type="button">アルバイト入力</button>
         </p>
     </div>
 </body>
