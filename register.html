@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+
+    <script src="query-js/jquery-3.6.0.min.js"></script>
+    <script>
+        $().ready(function () {
+            const keyName = 'visited';
+            const keyValue = true;
+            var ni = "なんか表示してください"
+            console.log(ni)
+            try {
+                if (!localStorage.getItem(keyName)) {
+                    //localStorageにキーと値を追加
+                    localStorage.setItem(keyName, keyValue);
+                    console.log("実行マンです")
+                    var file = document.querySelector('worklist.csv');
+                    // input 変化時に読み込む
+                    file.onchange = function () {
+                        var fileList = file.files;
+                        var reader = new FileReader();
+                        reader.readAsText(fileList[0]);
+                        //読み込み後表示
+                        reader.onload = function () {
+                            document.querySelector('#preview').textContent = reader.result;
+                        };
+                    }
+                };
+            } catch (error) {
+                console.log("実行されていますよ")
+                var str = "";
+                var blob = new Blob([str], { type: "text/csv" }); //配列に上記の文字列(str)を設定
+                var link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = "worklist.csv";
+                link.click();
+            }
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
