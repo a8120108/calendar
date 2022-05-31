@@ -6,11 +6,12 @@
     <script src="query-js/jquery-3.6.0.min.js"></script>
     <script>
         $().ready(function () {
-            const keyName = 'visited';
-            const keyValue = true;
+            var keyName = 'visited';
+            var keyValue = true;
             var ni = "なんか表示してください"
             console.log(ni)
             try {
+                console.log(localStorage.getItem(keyName) + "が代入されています")
                 if (!localStorage.getItem(keyName)) {
                     //localStorageにキーと値を追加
                     localStorage.setItem(keyName, keyValue);
@@ -37,11 +38,15 @@
                 link.click();
             }
         })
+
+        function emergency() {
+            localStorage.clear()
+        }
     </script>
 </head>
 
 <body>
-
+    <button id="negi" onclick="emergency()">非常時ボタン</button>
 </body>
 
 </html>
