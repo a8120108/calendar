@@ -18,7 +18,7 @@
                     console.log("ダウンロード中です")
 
                     var TempData = [];
-                    var Template = ["アルバイト名", "開始時間", "終了時間"]
+                    var Template = ["アルバイト名", "時給"]
                     TempData.push(Template)
 
                     var str = "";
@@ -48,7 +48,7 @@
                     var blob = new Blob([bom, str], { type: "text/csv" }); //配列に上記の文字列(str)を設定
                     var link = document.createElement('a');
                     link.href = URL.createObjectURL(blob);
-                    link.download = "worklist.csv";
+                    link.download = "jobdata.csv";
                     link.click();
                 };
             } catch (error) {
@@ -60,8 +60,19 @@
             localStorage.clear()
         }
 
-        function push_register(){
-            
+        function readfile() {
+            var data = document.querySelector('#getcsv').files
+            document.querySelector('#name').innerHTML = getcsv.name;
+            document.querySelector('#type').innerHTML = getcsv.type;
+            document.querySelector('#size').innerHTML = getcsv.size / 1024;
+        }
+        function push_register() {
+            var name = document.getElementById("name").value
+            var moneyh = document.getElementById("moneyh").value
+            var datan = []
+            datan.push(name, moneyh)
+            console.log(datan)
+
         }
     </script>
 </head>
@@ -69,11 +80,16 @@
 <body>
     <h1>アルバイト登録フォーム</h1>
     <hr>
-    <button id="negi" onclick="emergency()">非常時ボタン</button>
+    <input id="getcsv" type="file" accept="text/csv" @change="handleFileSelect" />
+    <button id="read" onclick="readfile()">読み込み</button><br>
+    <!-- <button id="negi" onclick="emergency()">非常時ボタン</button>-->
     <p><input id="name" placeholder="アルバイト名"><br>
         <input id="moneyh" placeholder="時給">
         <button id="confirm" onclick="push_register()">確定</button>
     </p>
+    <span id="name"></span>
+    <span id="type"></span>
+    <span id="size"></span>
 </body>
 
 </html>
