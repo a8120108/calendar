@@ -12,7 +12,6 @@
             var ni = "なんか表示してください"
             console.log(ni)
             try {
-                console.log(localStorage.getItem(keyName) + "が代入されています")
                 if (!localStorage.getItem(keyName)) {
                     //localStorageにキーと値を追加
                     localStorage.setItem(keyName, keyValue);
@@ -53,28 +52,28 @@
                     link.click();
                 };
             } catch (error) {
-                // console.log("読み込み処理をします！")
-                // const getcsv = document.getElementById("csvfile")
-                // const file = parseCSV(await getcsv[0].text())
-                // console.log(file)
-
-                // var str = "";
-                // var blob = new Blob([str], { type: "text/csv" }); //配列に上記の文字列(str)を設定
-                // var link = document.createElement('a');
-                // link.href = URL.createObjectURL(blob);
-                // link.download = "worklist.csv";
-                // link.click();
+                console.log("読み込み処理をします！")
             }
         })
 
         function emergency() {
             localStorage.clear()
         }
+
+        function push_register(){
+            
+        }
     </script>
 </head>
 
 <body>
+    <h1>アルバイト登録フォーム</h1>
+    <hr>
     <button id="negi" onclick="emergency()">非常時ボタン</button>
+    <p><input id="name" placeholder="アルバイト名"><br>
+        <input id="moneyh" placeholder="時給">
+        <button id="confirm" onclick="push_register()">確定</button>
+    </p>
 </body>
 
 </html>
