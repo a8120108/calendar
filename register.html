@@ -52,27 +52,29 @@
                     link.click();
                 };
             } catch (error) {
-                console.log("読み込み処理をします！")
+                console.log("読み込み処理をします！");
             }
         })
 
         function emergency() {
-            localStorage.clear()
+            localStorage.clear();
         }
 
         function readfile() {
-            var data = document.querySelector('#getcsv').files
-            console.log(data[0].name)
+            var data = document.querySelector('#getcsv').files;
             document.querySelector('#named').innerHTML = data[0].name;
             document.querySelector('#type').innerHTML = data[0].type;
             document.querySelector('#size').innerHTML = data[0].size / 1024 + "MB";
+            return data;
         }
         function push_register() {
-            var name = document.getElementById("name").value
-            var moneyh = document.getElementById("moneyh").value
-            var datan = []
-            datan.push(name, moneyh)
-            console.log(datan)
+            var name = document.getElementById("name").value;
+            var moneyh = document.getElementById("moneyh").value;
+            var Tempdata = readfile()
+            console.log(Tempdata)
+            var datan = [];
+            datan.push(name, moneyh);
+            console.log(datan);
 
         }
     </script>
