@@ -6,6 +6,9 @@
     <script src="query-js/jquery-3.6.0.min.js"></script>
     <object id="csvfile" data="worklist.txt"></object>
     <script>
+        //このシステムを作るためにはpythonの方が適しているかもしれない。
+        //ファイルを書き換えるごとにダウンロードして置き換えてもらうのは面倒すぎる。
+        //いっそのことpythonでアプリケーション化してしまった方が良さそう。
         $().ready(function () {
             var keyName = 'visited';
             var keyValue = true;
